@@ -9,7 +9,7 @@ import java.awt.geom.Point2D;
 // API help : http://robocode.sourceforge.net/docs/robocode/robocode/Robot.html
 
 /**
- * Mb1 - a robot by (your name here)
+ * Robo05 - a robot by (your name here)
  */
 public class Robo05 extends AdvancedRobot
 {
