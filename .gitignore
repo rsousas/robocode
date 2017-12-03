@@ -25,3 +25,7 @@ hs_err_pid*
 /Robo06/dist/
 /Robo05/dist/
 /Robo05/build/
+/Robo05/nbproject/private/
+/ProjetoIA/nbproject/private/
+/ProjetoIA/build/
+/ProjetoIA/dist/

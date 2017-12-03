@@ -28,6 +28,10 @@ public class Robo05 extends AdvancedRobot {
     /**
      * run: Mb1's default behavior
      */
+    public static void main(String[] args) throws Exception {
+        new Robo05().run(); // run main
+    }
+
     public void run() {
         // Initialization of the robot should be put here
 
@@ -122,7 +126,7 @@ public class Robo05 extends AdvancedRobot {
         while (iterator.hasNext()) {
             TargetRobot tRobot = (TargetRobot) iterator.next();
             if (tRobot.getName() == e.getName()) {
-                if (e.getEnergy() > 10) {
+                if (e.getEnergy() > 25) {
                     tRobot.recordScanEvent(e, calcTargetLocation(e));
                     foundRobot = true;
                 } else {
@@ -134,8 +138,12 @@ public class Robo05 extends AdvancedRobot {
 
         if (!foundRobot) {
             TargetRobot tRobot = new TargetRobot(e.getName());
-            tRobot.recordScanEvent(e, calcTargetLocation(e));
-            _targetMap.put(tRobot.getName(), tRobot);
+            if (e.getLife()> 0) {
+                tRobot.recordScanEvent(e, calcTargetLocation(e));
+                _targetMap.put(tRobot.getName(), tRobot);
+            } else {
+                _targetMap.remove(tRobot.getName(), tRobot);
+            }
         }
 
         iterator = _targetMap.values().iterator();
