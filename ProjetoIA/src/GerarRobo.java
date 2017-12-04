@@ -25,10 +25,10 @@ public class GerarRobo {
                 sb.append(line).append("\n");
             }
 
-            String modelo = sb.toString().replaceAll("//.*|(\"(?:\\\\[^\"]|\\\\\"|.)*?\")|(?s)/\\*.*?\\*/", ""); // remove comments
-            modelo = modelo.replaceAll("package ([^;]+)", "package " + pacote); // change package nome
-            modelo = modelo.replaceAll("class ([^ ]+)", "class " + nome); // change class nome
-            modelo = modelo.replaceAll("int", "double"); // int to double
+            String modelo = sb.toString().replaceAll("//.*|(\"(?:\\\\[^\"]|\\\\\"|.)*?\")|(?s)/\\*.*?\\*/", "");
+            modelo = modelo.replaceAll("package ([^;]+)", "package " + pacote);
+            modelo = modelo.replaceAll("class ([^ ]+)", "class " + nome);
+            modelo = modelo.replaceAll("int", "double");
 
             List<Double> ls = new ArrayList<>();
             Pattern padrao = Pattern.compile("(?>-?\\d+(?:[\\./]\\d+)?)");
@@ -56,13 +56,13 @@ public class GerarRobo {
     }
 
     public static void createRobo(IChromosome cromossomo) {
-        createCodigo(cromossomo); // Criar arquivo
-        compile(); // Compilar arquivo
+        createCodigo(cromossomo);
+        compile();
     }
 
     private static void compile() {
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        compiler.run(null, null, null, arquivo); // Compilar
+        compiler.run(null, null, null, arquivo);
     }
 
     private static void createCodigo(IChromosome cromossomo) {

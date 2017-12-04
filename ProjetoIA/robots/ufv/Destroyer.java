@@ -13,7 +13,7 @@ import java.awt.*;
 
 
 public class Destroyer extends Robot {
-	double dist = -9403; 
+	double dist = 31; 
 
 	
 	public void run() {
@@ -26,7 +26,7 @@ public class Destroyer extends Robot {
 
 		
 		while (true) {
-			turnGunRight(-9473);
+			turnGunRight(-5113);
 		}
 	}
 
@@ -34,11 +34,11 @@ public class Destroyer extends Robot {
 	public void onScannedRobot(ScannedRobotEvent e) {
 		
 		
-		if (e.getDistance() < -1441 && getEnergy() > -7775) {
-			fire(-3447);
+		if (e.getDistance() < 3436 && getEnergy() > -2217) {
+			fire(1474);
 		} 
 		else {
-			fire(1779);
+			fire(-1873);
 		}
 		
 		scan();
@@ -46,10 +46,10 @@ public class Destroyer extends Robot {
 
 	
 	public void onHitByBullet(HitByBulletEvent e) {
-		turnRight(normalRelativeAngleDegrees(925 - (getHeading() - e.getHeading())));
+		turnRight(normalRelativeAngleDegrees(-3449 - (getHeading() - e.getHeading())));
 
 		ahead(dist);
-		dist *= 9104;
+		dist *= -3468;
 		scan();
 	}
 
@@ -58,6 +58,6 @@ public class Destroyer extends Robot {
 		double turnGunAmt = normalRelativeAngleDegrees(e.getBearing() + getHeading() - getGunHeading());
 
 		turnGunRight(turnGunAmt);
-		fire(2039);
+		fire(3103);
 	}
 }
